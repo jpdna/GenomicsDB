@@ -35,8 +35,18 @@ query_json_template_string="""
         "workspace" : "",
         "array" : "",
         "vcf_header_filename" : ["inputs/template_vcf_header.vcf"],
-        "query_column_ranges" : [ [ [0, 10000000000 ] ] ],
-        "query_row_ranges" : [ [ [0, 3 ] ] ],
+        "query_column_ranges": [{
+		"range_list": [{
+			"low": 0,
+			"high": 10000000000
+		}]
+	}],
+        "query_row_ranges": [{
+		"range_list": [{
+			"low": 0,
+			"high": 3
+		}]
+	}],
         "reference_genome" : "inputs/chr1_10MB.fasta.gz",
         "query_attributes" : [ "REF", "ALT", "BaseQRankSum", "MQ", "RAW_MQ", "MQ0", "ClippingRankSum", "MQRankSum", "ReadPosRankSum", "DP", "GT", "GQ", "SB", "AD", "PL", "DP_FORMAT", "MIN_DP", "PID", "PGT" ]
 }"""
@@ -256,14 +266,24 @@ def main():
                 'callset_mapping_file': 'inputs/callsets/t0_1_2.json',
                 "vid_mapping_file": "inputs/vid_phased_GT.json",
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ], "golden_output": {
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }], "golden_output": {
                         "calls"      : "golden_outputs/t0_1_2_calls_at_0_phased_GT",
                         "variants"   : "golden_outputs/t0_1_2_variants_at_0_phased_GT",
                         "vcf"        : "golden_outputs/t0_1_2_vcf_at_0",
                         "batched_vcf": "golden_outputs/t0_1_2_vcf_at_0",
                         "java_vcf"   : "golden_outputs/java_t0_1_2_vcf_at_0",
                         } },
-                    { "query_column_ranges" : [ [12150, 1000000000] ], "golden_output": {
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 12150,
+                            "high": 1000000000
+                        }]
+                    }], "golden_output": {
                         "calls"      : "golden_outputs/t0_1_2_calls_at_12150_phased_GT",
                         "variants"   : "golden_outputs/t0_1_2_variants_at_12150_phased_GT",
                         "vcf"        : "golden_outputs/t0_1_2_vcf_at_12150",
@@ -276,14 +296,24 @@ def main():
                 'callset_mapping_file': 'inputs/callsets/t0_1_2_buffer.json',
                 'stream_name_to_filename_mapping': 'inputs/callsets/t0_1_2_buffer_mapping.json',
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ], "golden_output": {
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }], "golden_output": {
                         "calls"      : "golden_outputs/t0_1_2_calls_at_0",
                         "variants"   : "golden_outputs/t0_1_2_variants_at_0",
                         "vcf"        : "golden_outputs/t0_1_2_vcf_at_0",
                         "batched_vcf": "golden_outputs/t0_1_2_vcf_at_0",
                         "java_vcf"   : "golden_outputs/java_t0_1_2_vcf_at_0",
                         } },
-                    { "query_column_ranges" : [ [12150, 1000000000] ], "golden_output": {
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 12150,
+                            "high": 1000000000
+                        }]
+                    }], "golden_output": {
                         "calls"      : "golden_outputs/t0_1_2_calls_at_12150",
                         "variants"   : "golden_outputs/t0_1_2_variants_at_12150",
                         "vcf"        : "golden_outputs/t0_1_2_vcf_at_12150",
@@ -296,14 +326,24 @@ def main():
                 'callset_mapping_file': 'inputs/callsets/t0_1_2_buffer.json',
                 'stream_name_to_filename_mapping': 'inputs/callsets/t0_1_2_buffer_mapping.json',
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ], "golden_output": {
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }], "golden_output": {
                         "calls"      : "golden_outputs/t0_1_2_calls_at_0",
                         "variants"   : "golden_outputs/t0_1_2_variants_at_0",
                         "vcf"        : "golden_outputs/t0_1_2_vcf_at_0",
                         "batched_vcf": "golden_outputs/t0_1_2_vcf_at_0",
                         "java_vcf"   : "golden_outputs/java_t0_1_2_vcf_at_0",
                         } },
-                    { "query_column_ranges" : [ [12150, 1000000000] ], "golden_output": {
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 12150,
+                            "high": 1000000000
+                        }]
+                    }], "golden_output": {
                         "calls"      : "golden_outputs/t0_1_2_calls_at_12150",
                         "variants"   : "golden_outputs/t0_1_2_variants_at_12150",
                         "vcf"        : "golden_outputs/t0_1_2_vcf_at_12150",
@@ -316,7 +356,12 @@ def main():
                 'callset_mapping_file': 'inputs/callsets/t6_7_8.json',
                 'vid_mapping_file': 'inputs/vid_MLEAC_MLEAF.json',
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }],
                       "query_attributes" : query_attributes_with_MLEAC_only, "golden_output": {
                         "calls"        : "golden_outputs/test_new_fields_MLEAC_only.json",
                         } },
@@ -335,7 +380,12 @@ def main():
                 'chromosome_interval': '1:1-100000000',
                 "vid_mapping_file": "inputs/vid_phased_GT.json",
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }],
                         'callset_mapping_file': 'inputs/callsets/t0_1_2.json',
                         "vid_mapping_file": "inputs/vid_phased_GT.json",
                         "golden_output": {
@@ -343,7 +393,12 @@ def main():
                         "batched_vcf": "golden_outputs/t0_1_2_vcf_at_0",
                         "java_vcf"   : "golden_outputs/java_t0_1_2_vcf_at_0",
                         } },
-                    { "query_column_ranges" : [ [12150, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 12150,
+                            "high": 1000000000
+                        }]
+                    }],
                         'callset_mapping_file': 'inputs/callsets/t0_1_2.json',
                         "vid_mapping_file": "inputs/vid_phased_GT.json",
                         "golden_output": {
@@ -358,7 +413,12 @@ def main():
                 'chromosome_interval': '1:1-100000000',
                 "vid_mapping_file": "inputs/vid_phased_GT.json",
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }],
                         "vid_mapping_file": "inputs/vid_phased_GT.json",
                         'callset_mapping_file': 'inputs/callsets/t6_7_8.json',
                         "golden_output": {
@@ -367,7 +427,12 @@ def main():
                         "vcf"        : "golden_outputs/t6_7_8_vcf_at_0",
                         "batched_vcf": "golden_outputs/t6_7_8_vcf_at_0",
                         } },
-                    { "query_column_ranges" : [ [8029500, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 8029500,
+                            "high": 1000000000
+                        }]
+                    }],
                         "vid_mapping_file": "inputs/vid_phased_GT.json",
                         'callset_mapping_file': 'inputs/callsets/t6_7_8.json',
                         "golden_output": {
@@ -381,7 +446,12 @@ def main():
             { "name" : "t0_1_2_combined", 'golden_output' : 'golden_outputs/t0_1_2_combined',
                 'callset_mapping_file': 'inputs/callsets/t0_1_2_combined.json',
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ], "golden_output": {
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }], "golden_output": {
                         "vcf"        : "golden_outputs/t0_1_2_combined",
                         "batched_vcf": "golden_outputs/t0_1_2_combined",
                         } },
@@ -391,7 +461,12 @@ def main():
                 'callset_mapping_file': 'inputs/callsets/t0_1_2.json',
                 'vid_mapping_file': 'inputs/vid_DS_ID.json',
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }],
                         "query_attributes": query_attributes_with_DS_ID, "golden_output": {
                         "calls"      : "golden_outputs/t0_1_2_DS_ID_calls_at_0",
                         "variants"   : "golden_outputs/t0_1_2_DS_ID_variants_at_0",
@@ -403,7 +478,12 @@ def main():
                 'callset_mapping_file': 'inputs/callsets/t0_1_2.json',
                 'chromosome_interval': '1:1-100000000',
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }],
                         'vid_mapping_file': 'inputs/vid_DS_ID_phased_GT.json',
                         'callset_mapping_file': 'inputs/callsets/t0_1_2.json',
                         "query_attributes": query_attributes_with_DS_ID, "golden_output": {
@@ -419,7 +499,12 @@ def main():
             { "name" : "t0_with_missing_PL_SB_fields", 'golden_output' : 'golden_outputs/t0_with_missing_PL_SB_fields_t1.vcf',
                 'callset_mapping_file': 'inputs/callsets/t0_with_missing_PL_SB_fields_t1.json',
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ], "golden_output": {
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }], "golden_output": {
                         "calls"      : "golden_outputs/t0_with_missing_PL_SB_fields_t1_calls.json",
                         } },
                     ]
@@ -431,7 +516,12 @@ def main():
                 'size_per_column_partition': 1200,
                 'segment_size': 100,
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }],
                       'callset_mapping_file': 'inputs/callsets/t0_haploid_triploid_1_2_3_triploid_deletion.json',
                       "vid_mapping_file": "inputs/vid_DS_ID_phased_GT.json",
                       'segment_size': 100,
@@ -439,7 +529,12 @@ def main():
                         "vcf"        : "golden_outputs/t0_haploid_triploid_1_2_3_triploid_deletion_vcf",
                         "java_vcf"   : "golden_outputs/t0_haploid_triploid_1_2_3_triploid_deletion_java_vcf",
                         } },
-                    { "query_column_ranges" : [ [0, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }],
                       'callset_mapping_file': 'inputs/callsets/t0_haploid_triploid_1_2_3_triploid_deletion.json',
                       "vid_mapping_file": "inputs/vid_DS_ID_phased_GT.json",
                       'produce_GT_field': True,
@@ -455,7 +550,12 @@ def main():
                 'vid_mapping_file': 'inputs/vid_all_asa.json',
                 'size_per_column_partition': 3000,
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }],
                       "force_override": True,
                       'segment_size': 100,
                       "query_attributes": asa_vcf_query_attributes,
@@ -469,7 +569,12 @@ def main():
                 'vid_mapping_file': 'inputs/vid_all_asa.json',
                 'chromosome_interval': '1:1-100000000',
                 "query_params": [
-                    { "query_column_ranges" : [ [0, 1000000000] ],
+                    { "query_column_ranges": [{
+                        "range_list": [{
+                            "low": 0,
+                            "high": 1000000000
+                        }]
+                    }],
                         "force_override": True,
                         'segment_size': 100,
                         "query_attributes": asa_vcf_query_attributes,
