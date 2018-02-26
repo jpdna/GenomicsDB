@@ -50,7 +50,7 @@ message RowRangeList {
 
 message ExportConfiguration {
   required string workspace = 1;
-  required string array = 2;
+  optional string array = 2;
   required string reference_genome = 3;
   repeated ColumnRangeList query_column_ranges = 4;
   repeated RowRangeList query_row_ranges = 5;
@@ -64,4 +64,5 @@ message ExportConfiguration {
   optional bool index_output_VCF = 13; 
   optional bool produce_GT_field = 14;
   optional bool produce_FILTER_field = 15;
+  optional bool scan_full = 16;
 }
